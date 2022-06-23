@@ -1,9 +1,9 @@
 module.exports = function reverse (n) {
-
-  n = String(Math.abs(n));
   let newNumber = '';
-  for (let i = n.length-1; i >= 0; i--) {
-    newNumber = newNumber + n[i];
+  n = Math.abs(n);
+  while (n > 0) {
+    newNumber = newNumber + (n % 10);
+    n = (n - n%10)/10;
   }
   return newNumber;
 }
